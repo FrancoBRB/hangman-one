@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Juego del Ahorcado</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+  </head>
+
+  <body>
+    <div class="container">
+      <img class="logo" src="./assets/Logo.svg" />
+      <div class="hangman-container">
+        <img class="hangman" src="./assets/0.png" />
+      </div>
+
+      <!-- MENU -->
+
+      <div class="menu-start">
+        <div class="panel-start">
+          <button class="ingame-button filled" onclick="startGame()">
+            Nuevo Juego
+          </button>
+          <button class="ingame-button blank" onclick="newWord()">
+            Agregar Palabra
+          </button>
+        </div>
+      </div>
+
+      <!-- SECRET word -->
+
+      <div class="secret-word"></div>
+
+      <!-- ALREADY TRIED LETTERS -->
+
+      <p class="already-tried"></p>
+
+      <!-- KEYBOARD -->
+      <div class="keyboard">
+        <div>
+          <button class="keyboard-button" onclick="p.attempt('q');disableMe('q')">Q</button>
+          <button class="keyboard-button" onclick="p.attempt('w');disableMe('w')">W</button>
+          <button class="keyboard-button" onclick="p.attempt('e');disableMe('e')">E</button>
+          <button class="keyboard-button" onclick="p.attempt('r');disableMe('r')">R</button>
+          <button class="keyboard-button" onclick="p.attempt('t');disableMe('t')">T</button>
+          <button class="keyboard-button" onclick="p.attempt('y');disableMe('y')">Y</button>
+          <button class="keyboard-button" onclick="p.attempt('u');disableMe('u')">U</button>
+          <button class="keyboard-button" onclick="p.attempt('i');disableMe('i')">I</button>
+          <button class="keyboard-button" onclick="p.attempt('o');disableMe('o')">O</button>
+          <button class="keyboard-button" onclick="p.attempt('p');disableMe('p')">P</button>
+        </div>
+        <div>
+          <button class="keyboard-button" onclick="p.attempt('a');disableMe('a')">A</button>
+          <button class="keyboard-button" onclick="p.attempt('s');disableMe('s')">S</button>
+          <button class="keyboard-button" onclick="p.attempt('d');disableMe('d')">D</button>
+          <button class="keyboard-button" onclick="p.attempt('f');disableMe('f')">F</button>
+          <button class="keyboard-button" onclick="p.attempt('g');disableMe('g')">G</button>
+          <button class="keyboard-button" onclick="p.attempt('h');disableMe('h')">H</button>
+          <button class="keyboard-button" onclick="p.attempt('j');disableMe('j')">J</button>
+          <button class="keyboard-button" onclick="p.attempt('k');disableMe('k')">K</button>
+          <button class="keyboard-button" onclick="p.attempt('l');disableMe('l')">L</button>
+          <button class="keyboard-button" onclick="p.attempt('ñ');disableMe('ñ')">Ñ</button>
+        </div>
+        <div>
+          <button class="keyboard-button" onclick="p.attempt('z');disableMe('z')">Z</button>
+          <button class="keyboard-button" onclick="p.attempt('x');disableMe('x')">X</button>
+          <button class="keyboard-button" onclick="p.attempt('c');disableMe('c')">C</button>
+          <button class="keyboard-button" onclick="p.attempt('v');disableMe('v')">V</button>
+          <button class="keyboard-button" onclick="p.attempt('b');disableMe('b')">B</button>
+          <button class="keyboard-button" onclick="p.attempt('n');disableMe('n')">N</button>
+          <button class="keyboard-button" onclick="p.attempt('m');disableMe('m')">M</button>
+        </div>
+      </div>
+
+      <!-- INGAME BUTTONS -->
+      <button class="ingame-button filled" onclick="resetGame()">
+        Nuevo Juego
+      </button>
+      <button class="ingame-button blank" onclick="p.gameOver()">
+        Desistir
+      </button>
+
+      <!-- W & L PANEL -->
+
+      <div class="panel occult"></div>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
